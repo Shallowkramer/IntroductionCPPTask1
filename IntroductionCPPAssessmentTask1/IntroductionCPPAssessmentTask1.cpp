@@ -2,8 +2,13 @@
 //
 
 #include <iostream>
+#include "MyString.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    MyString myStringDefault;
+    MyString myStringCustom ("Custom String");
+
+    myStringDefault.WriteToConsole();
+    myStringCustom.WriteToConsole();
 }

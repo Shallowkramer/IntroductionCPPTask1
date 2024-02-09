@@ -21,7 +21,7 @@ public:
 	MyString& Append(const MyString& _str);
 	MyString& Prepend(const MyString& _str);
 
-	const char* ConstStr() const;
+	const char* CStr() const;
 
 	MyString& ToLower();
 	MyString& ToUpper();
@@ -31,8 +31,8 @@ public:
 
 	MyString& Replace(const MyString& _find, const MyString& _replace);
 
-	MyString& ReadFromConsole();
-	MyString& WriteToConsole();
+	void ReadFromConsole();
+	void WriteToConsole();
 
 
 	//Operator Overides
@@ -44,6 +44,8 @@ public:
 	char& operator[](size_t _index);
 	const char& operator[](size_t _index) const;
 
+
+	//Public Variables
 
 private:
 	char* string;
