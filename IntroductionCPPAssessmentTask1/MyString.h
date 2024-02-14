@@ -13,6 +13,8 @@ public:
 
 	//Functions
 	size_t Length() const;
+	size_t LengthNullIncluded() const;
+
 	char& CharacterAt(size_t _index);
 	const char& CharacterAt(size_t _index) const;
 

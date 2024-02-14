@@ -8,7 +8,7 @@ int main()
 {
     MyString myStringDefault;
     MyString myStringCustom ("Custom String");
-    MyString myStringCopy;
+    MyString myStringCopy (myStringDefault);
 
     myStringDefault.WriteToConsole();
     myStringCustom.WriteToConsole();

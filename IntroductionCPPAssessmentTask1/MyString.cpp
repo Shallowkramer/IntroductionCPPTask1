@@ -20,7 +20,11 @@ MyString::MyString(const char* _str)
 
 MyString::MyString(const MyString& _other)
 {
-	int _other
+	int length = _other.LengthNullIncluded();
+
+	string = new char[length];
+
+	strcpy_s(string, length, _other.string);
 }
 
 MyString::~MyString()
