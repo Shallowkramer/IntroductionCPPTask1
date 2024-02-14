@@ -73,26 +73,53 @@ bool MyString::EqualTo(const MyString& _str)
 
 MyString MyString::Append(const MyString& _str)
 {
+	//combines the length of 1 string with the length of the other string with null terminator
 	int newLength = Length() + _str.LengthNullIncluded();
 
+	//Copied constructor
 	MyString tempString(string);
 
+	//deletes string after being copied
 	delete[] string;
 
+
+	//makes new string of the correct length
 	string = new char[newLength];
 
+	//includes null terminator as string concatanate needs that to work
 	string[0] = '\0';
 
+	//appends strings
 	strcat_s(string, newLength, tempString.string);
 	strcat_s(string, newLength, _str.string);
 
 	return string;
 }
 
-//MyString& MyString::Prepend(const MyString& _str)
-//{
-//	// TODO: insert return statement here
-//}
+MyString MyString::Prepend(const MyString& _str)
+{
+	//combines the length of 1 string with the length of the other string with null terminator
+	int newLength = Length() + _str.LengthNullIncluded();
+
+	//Copied constructor
+	MyString tempString(string);
+
+	//deletes string after being copied
+	delete[] string;
+
+
+	//makes new string of the correct length
+	string = new char[newLength];
+
+	//includes null terminator as string concatanate needs that to work
+	string[0] = '\0';
+
+	//prepends strings
+	strcat_s(string, newLength, _str.string);
+	strcat_s(string, newLength, tempString.string);
+
+	return string;
+}
 
 const char* MyString::CStr() const
 {
