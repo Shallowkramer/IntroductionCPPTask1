@@ -123,7 +123,7 @@ MyString MyString::Prepend(const MyString& _str)
 
 const char* MyString::CStr() const
 {
-	return nullptr;
+	return string;
 }
 
 //MyString& MyString::ToLower()

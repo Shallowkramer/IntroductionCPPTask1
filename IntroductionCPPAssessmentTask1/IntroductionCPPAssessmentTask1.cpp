@@ -30,4 +30,6 @@ int main()
     myStringDefault.Prepend(myStringCustom1);
 
     myStringDefault.WriteToConsole();
+
+    std::cout << myStringDefault.CStr() << std::endl;
 }
