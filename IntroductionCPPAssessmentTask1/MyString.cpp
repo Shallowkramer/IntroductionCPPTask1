@@ -1,5 +1,6 @@
 #include "MyString.h"
 #include <iostream>
+#include <ctype.h>
 
 MyString::MyString()
 {
@@ -126,25 +127,33 @@ const char* MyString::CStr() const
 	return string;
 }
 
-//MyString& MyString::ToLower()
+MyString MyString::ToLower()
+{
+	for (int i = 0; i < Length(); i++)
+	{
+		if (isupper((int)(string[i])))
+		{
+			string[i] = tolower((int)string[i]);
+		}
+	}
+	
+	return string;
+}
+
+//MyString MyString::ToUpper()
 //{
 //	// TODO: insert return statement here
 //}
 
-//MyString& MyString::ToUpper()
+//size_t MyString::Find(const MyString& _str)
 //{
-//	// TODO: insert return statement here
+//	return size_t();
 //}
-
-size_t MyString::Find(const MyString& _str)
-{
-	return size_t();
-}
-
-size_t MyString::Find(size_t _startIndex, const MyString& _str)
-{
-	return size_t();
-}
+//
+//size_t MyString::Find(size_t _startIndex, const MyString& _str)
+//{
+//	return size_t();
+//}
 
 //MyString& MyString::Replace(const MyString& _find, const MyString& _replace)
 //{

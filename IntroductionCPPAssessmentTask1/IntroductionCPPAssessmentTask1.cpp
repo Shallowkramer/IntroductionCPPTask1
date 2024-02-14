@@ -11,13 +11,18 @@ int main()
     MyString myStringCustom2 ("Custom1 String");
     MyString myStringCopy (myStringDefault);
 
+
+    //Testing CharacterAt
     std::cout << myStringCustom1.CharacterAt(15) << std::endl;
 
+
+    //Testing Write To Console
     myStringDefault.WriteToConsole();
     myStringCustom1.WriteToConsole();
     myStringCopy.WriteToConsole();
 
 
+    //Testing EqualTo
     if (myStringCustom1.EqualTo(myStringCustom2))
     {
         std::cout << "true" << std::endl;
@@ -27,9 +32,18 @@ int main()
         std::cout << "false" << std::endl;
     }
     
+
+    //Testing Prepend
     myStringDefault.Prepend(myStringCustom1);
 
     myStringDefault.WriteToConsole();
 
+
+    //Testing CStr
     std::cout << myStringDefault.CStr() << std::endl;
+
+
+    //Testing ToLower
+    myStringCopy.ToLower();
+    myStringCopy.WriteToConsole();
 }
