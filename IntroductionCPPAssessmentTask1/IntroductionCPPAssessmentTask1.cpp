@@ -27,4 +27,7 @@ int main()
         std::cout << "false" << std::endl;
     }
     
+    myStringDefault.Append(myStringCustom1);
+
+    myStringDefault.WriteToConsole();
 }

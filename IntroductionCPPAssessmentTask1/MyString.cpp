@@ -71,11 +71,23 @@ bool MyString::EqualTo(const MyString& _str)
 	}
 }
 
-//MyString& MyString::Append(const MyString& _str)
-//{
-//	// TODO: insert return statement here
-//}
-//
+MyString MyString::Append(const MyString& _str)
+{
+	int newLength = Length() + _str.Length();
+
+	MyString tempString(string);
+
+	delete string;
+	delete[] string;
+
+	string = new char[newLength];
+
+	strcat_s(string, newLength, tempString.string);
+	strcat_s(string, newLength, _str.string);
+
+	return string;
+}
+
 //MyString& MyString::Prepend(const MyString& _str)
 //{
 //	// TODO: insert return statement here
