@@ -73,14 +73,15 @@ bool MyString::EqualTo(const MyString& _str)
 
 MyString MyString::Append(const MyString& _str)
 {
-	int newLength = Length() + _str.Length();
+	int newLength = Length() + _str.LengthNullIncluded();
 
 	MyString tempString(string);
 
-	delete string;
 	delete[] string;
 
 	string = new char[newLength];
+
+	string[0] = '\0';
 
 	strcat_s(string, newLength, tempString.string);
 	strcat_s(string, newLength, _str.string);
