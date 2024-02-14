@@ -15,8 +15,7 @@ public:
 	size_t Length() const;
 	size_t LengthNullIncluded() const;
 
-	char& CharacterAt(size_t _index);
-	const char& CharacterAt(size_t _index) const;
+	char CharacterAt(size_t _index);
 
 	bool EqualTo(const MyString& _str);
 

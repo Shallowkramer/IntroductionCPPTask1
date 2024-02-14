@@ -29,7 +29,7 @@ MyString::MyString(const MyString& _other)
 
 MyString::~MyString()
 {
-	
+	delete[] string;
 }
 
 size_t MyString::Length() const
@@ -47,20 +47,29 @@ size_t MyString::LengthNullIncluded() const
 }
 
 
-//char& MyString::CharacterAt(size_t _index)
-//{
-//	// TODO: insert return statement here
-//}
-//
-//const char& MyString::CharacterAt(size_t _index) const
-//{
-//	// TODO: insert return statement here
-//}
+char MyString::CharacterAt(size_t _index)
+{
+	if (_index < 0 || Length() < _index)
+	{
+		return '\0'; 
+	}
+	else
+	{
+		return string[_index];
+	}
+}
 
-//bool MyString::EqualTo(const MyString& _str)
-//{
-//	return false;
-//}
+bool MyString::EqualTo(const MyString& _str)
+{
+	if (strcmp(string, _str.string) == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 //MyString& MyString::Append(const MyString& _str)
 //{
