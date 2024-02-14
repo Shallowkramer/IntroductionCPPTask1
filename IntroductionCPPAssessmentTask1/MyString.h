@@ -27,8 +27,8 @@ public:
 	MyString ToLower();
 	MyString ToUpper();
 
-	size_t Find(const MyString& _str);
-	size_t Find(size_t _startIndex, const MyString& _str);
+	int Find(const MyString& _str);
+	int Find(size_t _startIndex, const MyString& _str);
 
 	MyString& Replace(const MyString& _find, const MyString& _replace);
 
@@ -49,7 +49,10 @@ public:
 	//Public Variables
 
 private:
+	//Variables
 	char* string;
+
+	char* findStringString;
 
 };
 

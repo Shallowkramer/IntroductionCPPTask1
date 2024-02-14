@@ -153,15 +153,26 @@ MyString MyString::ToUpper()
 	return string;
 }
 
-//size_t MyString::Find(const MyString& _str)
+//int MyString::Find(const MyString& _str)
 //{
-//	return size_t();
+//	
 //}
-//
-//size_t MyString::Find(size_t _startIndex, const MyString& _str)
-//{
-//	return size_t();
-//}
+
+int MyString::Find(size_t _startIndex, const MyString& _str)
+{
+
+	if (_str.Length() < Length())
+	{
+		for (int i = _startIndex; i < Length(); i++)
+		{
+			
+
+
+		}
+	}
+
+	return -1;
+}
 
 //MyString& MyString::Replace(const MyString& _find, const MyString& _replace)
 //{
