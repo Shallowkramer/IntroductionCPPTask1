@@ -46,4 +46,9 @@ int main()
     //Testing ToLower
     myStringCopy.ToLower();
     myStringCopy.WriteToConsole();
+
+
+    //testing ToUpper
+    myStringCopy.ToUpper();
+    myStringCopy.WriteToConsole();
 }

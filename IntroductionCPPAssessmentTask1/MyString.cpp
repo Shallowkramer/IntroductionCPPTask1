@@ -140,10 +140,18 @@ MyString MyString::ToLower()
 	return string;
 }
 
-//MyString MyString::ToUpper()
-//{
-//	// TODO: insert return statement here
-//}
+MyString MyString::ToUpper()
+{
+	for (int i = 0; i < Length(); i++)
+	{
+		if (islower((int)(string[i])))
+		{
+			string[i] = toupper((int)string[i]);
+		}
+	}
+
+	return string;
+}
 
 //size_t MyString::Find(const MyString& _str)
 //{
