@@ -8,18 +8,24 @@ MyString::MyString()
 
 MyString::MyString(const char* _str)
 {
-	int length = strlen(_str);
+	//length of the string including null terminator
+	int length = strlen(_str) +1;
+	
+	//new string
+	string = new char[length]; 
 
-	string = new char[length] {*_str};
+	//input string being copied to new string
+	strcpy_s(string, length, _str);
 }
 
 MyString::MyString(const MyString& _other)
 {
-
+	int _other
 }
 
 MyString::~MyString()
 {
+	
 }
 
 size_t MyString::Length() const
@@ -28,6 +34,14 @@ size_t MyString::Length() const
 
 	return length;
 }
+
+size_t MyString::LengthNullIncluded() const
+{
+	int length = strlen(string) + 1;
+
+	return length;
+}
+
 
 //char& MyString::CharacterAt(size_t _index)
 //{
