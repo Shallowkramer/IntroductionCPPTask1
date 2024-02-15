@@ -187,7 +187,7 @@ int MyString::Find(int _startIndex, MyString& c)
 
 int MyString::Find(const char* c)
 {
-	return 0;
+	return Find(0, c);;
 }
 
 int MyString::Find(int _startIndex, const char* c)
