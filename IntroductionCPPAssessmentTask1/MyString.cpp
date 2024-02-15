@@ -153,7 +153,7 @@ MyString MyString::ToUpper()
 	return string;
 }
 
-bool MyString::CompareAt(int index, char* c)
+bool MyString::CompareAt(int index, const char* c)
 {
 
 	for (int i = 0; i < strlen(c); i++)
@@ -175,8 +175,28 @@ int MyString::Find(int _startIndex, MyString& c)
 	{
 		for (int i = _startIndex; i < Length() - c.Length(); i++)
 		{
-			std::cout << i << std::endl;
 			if (CompareAt(i, c.string))
+			{
+				return i;
+			}
+		}
+	}
+
+	return -1;
+}
+
+int MyString::Find(const char* c)
+{
+	return 0;
+}
+
+int MyString::Find(int _startIndex, const char* c)
+{
+	if (strlen(c) < Length())
+	{
+		for (int i = _startIndex; i < Length() - strlen(c); i++)
+		{
+			if (CompareAt(i, c))
 			{
 				return i;
 			}
@@ -193,11 +213,13 @@ int MyString::Find(MyString& c)
 
 
 
-//MyString& MyString::Replace(const MyString& _find, const MyString& _replace)
+//MyString MyString::Replace(MyString& _find, MyString& _replace)
 //{
-//	// TODO: insert return statement here
-//}
+//	Find(_find);
 //
+//	return string;
+//}
+
 void MyString::ReadFromConsole()
 {
 	

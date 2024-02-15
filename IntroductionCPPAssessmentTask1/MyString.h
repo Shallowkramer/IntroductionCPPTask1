@@ -30,7 +30,10 @@ public:
 	int Find(MyString& c);
 	int Find(int _startIndex, MyString& c);
 
-	MyString& Replace(const MyString& _find, const MyString& _replace);
+	int Find(const char* c);
+	int Find(int _startIndex, const char* c);
+
+	MyString Replace(const MyString& _find, const MyString& _replace);
 
 	void ReadFromConsole();
 	void WriteToConsole();
@@ -52,7 +55,7 @@ private:
 	//Variables
 	char* string;
 
-	bool CompareAt(int index, char* c);
+	bool CompareAt(int index, const char* c);
 
 };
 
