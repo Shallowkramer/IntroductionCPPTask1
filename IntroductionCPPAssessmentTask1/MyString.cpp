@@ -153,26 +153,45 @@ MyString MyString::ToUpper()
 	return string;
 }
 
-//int MyString::Find(const MyString& _str)
-//{
-//	
-//}
-
-int MyString::Find(size_t _startIndex, const MyString& _str)
+bool MyString::CompareAt(int index, char* c)
 {
 
-	if (_str.Length() < Length())
+	for (int i = 0; i < strlen(c); i++)
 	{
-		for (int i = _startIndex; i < Length(); i++)
+		if (string[index] != c[i])
 		{
-			
+			return false;
+		}
 
+		index++;
+	}
+	return true;
+}
 
+int MyString::Find(int _startIndex, MyString& c)
+{
+
+	if (strlen(c.string) < Length())
+	{
+		for (int i = _startIndex; i < Length() - c.Length(); i++)
+		{
+			std::cout << i << std::endl;
+			if (CompareAt(i, c.string))
+			{
+				return i;
+			}
 		}
 	}
 
 	return -1;
 }
+
+int MyString::Find(MyString& c)
+{
+	return Find(0, c);
+}
+
+
 
 //MyString& MyString::Replace(const MyString& _find, const MyString& _replace)
 //{
@@ -188,6 +207,8 @@ void MyString::WriteToConsole()
 {
 	std::cout << string << std::endl;
 }
+
+
 
 //bool MyString::operator==(const MyString& _other)
 //{
