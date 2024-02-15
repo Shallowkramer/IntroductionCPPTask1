@@ -33,6 +33,7 @@ MyString::~MyString()
 	delete[] string;
 }
 
+
 size_t MyString::Length() const
 {
 	int length = strlen(string);
@@ -74,8 +75,13 @@ bool MyString::EqualTo(const MyString& _str)
 
 MyString MyString::Append(const MyString& _str)
 {
+	return Append(_str.CStr());
+}
+
+MyString MyString::Append(const char* _str)
+{
 	//combines the length of 1 string with the length of the other string with null terminator
-	int newLength = Length() + _str.LengthNullIncluded();
+	int newLength = LengthNullIncluded() + strlen(_str);
 
 	//Copied constructor
 	MyString tempString(string);
@@ -92,15 +98,20 @@ MyString MyString::Append(const MyString& _str)
 
 	//appends strings
 	strcat_s(string, newLength, tempString.string);
-	strcat_s(string, newLength, _str.string);
+	strcat_s(string, newLength, _str);
 
 	return string;
 }
 
 MyString MyString::Prepend(const MyString& _str)
 {
+	return Prepend(_str.CStr());
+}
+
+MyString MyString::Prepend(const char* _str)
+{
 	//combines the length of 1 string with the length of the other string with null terminator
-	int newLength = Length() + _str.LengthNullIncluded();
+	int newLength = LengthNullIncluded() + strlen((const char*)_str);
 
 	//Copied constructor
 	MyString tempString(string);
@@ -116,7 +127,7 @@ MyString MyString::Prepend(const MyString& _str)
 	string[0] = '\0';
 
 	//prepends strings
-	strcat_s(string, newLength, _str.string);
+	strcat_s(string, newLength, (const char*)_str);
 	strcat_s(string, newLength, tempString.string);
 
 	return string;
@@ -168,21 +179,9 @@ bool MyString::CompareAt(int index, const char* c)
 	return true;
 }
 
-int MyString::Find(int _startIndex, MyString& c)
+int MyString::Find(int _startIndex, const MyString& c)
 {
-
-	if (strlen(c.string) < Length())
-	{
-		for (int i = _startIndex; i < Length() - c.Length(); i++)
-		{
-			if (CompareAt(i, c.string))
-			{
-				return i;
-			}
-		}
-	}
-
-	return -1;
+	return 	Find(_startIndex, c.string);
 }
 
 int MyString::Find(const char* c)
@@ -206,19 +205,67 @@ int MyString::Find(int _startIndex, const char* c)
 	return -1;
 }
 
-int MyString::Find(MyString& c)
+
+
+int MyString::Find(const MyString& c)
 {
 	return Find(0, c);
 }
 
+MyString MyString::SplitString(int splitStringAt)
+{
+	char* newString = new char[splitStringAt+1];
 
+	for (int i = 0; i <= splitStringAt; i++)
+	{
+		if (i == splitStringAt)
+		{
+			newString[i] = '\0';
+		}
+		else
+		{
+			newString[i] = string[i];
+		}		
+	}
+	
+	/*std::cout << newString << std::endl;*/
 
-//MyString MyString::Replace(MyString& _find, MyString& _replace)
-//{
-//	Find(_find);
-//
-//	return string;
-//}
+	return newString;
+}
+
+MyString MyString::Replace(const char* _find, const char* _replace)
+{
+	/*int* locations;*/
+
+	int diff = strlen(_replace) - strlen(_find);
+
+	int length = LengthNullIncluded() + diff;
+
+	char* tempString = new char[length];
+
+	if (strlen(_find) < Length())
+	{
+		for (int i = 0; i < Length(); i++)
+		{
+			if (Find(_find) != -1)
+			{
+				tempString = (SplitString(i).Append(_replace))).string;
+			}
+			else
+			{
+
+			}
+		}
+	}
+
+	std::cout << tempString << std::endl;
+
+	//delete[] string;
+
+	//string = tempString;
+	
+	return string;
+}
 
 void MyString::ReadFromConsole()
 {

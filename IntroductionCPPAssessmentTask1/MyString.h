@@ -11,7 +11,7 @@ public:
 	~MyString();
 	
 
-	//Functions
+	//Functions	
 	size_t Length() const;
 	size_t LengthNullIncluded() const;
 
@@ -20,20 +20,24 @@ public:
 	bool EqualTo(const MyString& _str);
 
 	MyString Append(const MyString& _str);
+	MyString Append(const char* _str);
 	MyString Prepend(const MyString& _str);
+	MyString Prepend(const char* _str);
 
 	const char* CStr() const;
 
 	MyString ToLower();
 	MyString ToUpper();
 
-	int Find(MyString& c);
-	int Find(int _startIndex, MyString& c);
+	int Find(const MyString& c);
+	int Find(int _startIndex, const MyString& c);
 
 	int Find(const char* c);
 	int Find(int _startIndex, const char* c);
 
-	MyString Replace(const MyString& _find, const MyString& _replace);
+	MyString SplitString(int splitStringAt);
+
+	MyString Replace(const char* _find, const char* _replace);
 
 	void ReadFromConsole();
 	void WriteToConsole();
@@ -55,6 +59,7 @@ private:
 	//Variables
 	char* string;
 
+	//Functions
 	bool CompareAt(int index, const char* c);
 
 };

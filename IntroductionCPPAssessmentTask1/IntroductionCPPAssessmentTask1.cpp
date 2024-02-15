@@ -71,4 +71,12 @@ int main()
 
     std::cout << myStringDefault2.Find(findCon) << std::endl;
 
+
+    //testing replace
+    std::cout << " " << std::endl;
+
+    myStringDefault2.Replace("t", "hi");
+
+    myStringDefault2.WriteToConsole();
+
 }
