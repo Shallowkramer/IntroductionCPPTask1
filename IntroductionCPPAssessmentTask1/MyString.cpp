@@ -242,6 +242,7 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 	int length = LengthNullIncluded() + diff;
 
 	char* tempString = new char[length];
+	tempString[0] = '\0';
 
 	if (strlen(_find) < Length())
 	{
@@ -249,20 +250,27 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 		{
 			if (Find(_find) != -1)
 			{
-				tempString = (SplitString(i).Append(_replace))).string;
+				strcat_s(tempString, length, (SplitString(i).Append(_replace).string));
+
+				std::cout << "find should happen when i=6" << std::endl;
+				std::cout << i << std::endl;
 			}
 			else
 			{
+				//appends strings
+				
 
+				std::cout << "find did find should happen when i=6" << std::endl;
+				
 			}
 		}
 	}
 
 	std::cout << tempString << std::endl;
 
-	//delete[] string;
+	delete[] string;
 
-	//string = tempString;
+	string = tempString;
 	
 	return string;
 }

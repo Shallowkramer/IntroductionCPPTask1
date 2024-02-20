@@ -7,69 +7,70 @@
 int main()
 {
     MyString myStringDefault;
+    MyString myStringDefault2;
     MyString myStringCustom1 ("Custom1 String");
     MyString myStringCustom2 ("Custom1 String");
     MyString myStringCopy (myStringDefault);
 
 
-    //Testing CharacterAt
-    std::cout << myStringCustom1.CharacterAt(15) << std::endl;
+    ////Testing CharacterAt
+    //std::cout << myStringCustom1.CharacterAt(15) << std::endl;
 
 
-    //Testing Write To Console
-    myStringDefault.WriteToConsole();
-    myStringCustom1.WriteToConsole();
-    myStringCopy.WriteToConsole();
+    ////Testing Write To Console
+    //myStringDefault.WriteToConsole();
+    //myStringCustom1.WriteToConsole();
+    //myStringCopy.WriteToConsole();
 
 
-    //Testing EqualTo
-    if (myStringCustom1.EqualTo(myStringCustom2))
-    {
-        std::cout << "true" << std::endl;
-    }
-    else
-    {
-        std::cout << "false" << std::endl;
-    }
-    
+    ////Testing EqualTo
+    //if (myStringCustom1.EqualTo(myStringCustom2))
+    //{
+    //    std::cout << "true" << std::endl;
+    //}
+    //else
+    //{
+    //    std::cout << "false" << std::endl;
+    //}
+    //
 
-    //Testing Prepend
-    std::cout << " " << std::endl;
+    ////Testing Prepend
+    //std::cout << " " << std::endl;
 
-    myStringDefault.Prepend(myStringCustom1);
+    //myStringDefault.Prepend(myStringCustom1);
 
-    myStringDefault.WriteToConsole();
-
-
-    //Testing CStr
-    std::cout << " " << std::endl;
-
-    std::cout << myStringDefault.CStr() << std::endl;
+    //myStringDefault.WriteToConsole();
 
 
-    //Testing ToLower
-    std::cout << " " << std::endl;
+    ////Testing CStr
+    //std::cout << " " << std::endl;
 
-    myStringCopy.ToLower();
-    myStringCopy.WriteToConsole();
-
-
-    //testing ToUpper
-    std::cout << " " << std::endl;
-
-    myStringCopy.ToUpper();
-    myStringCopy.WriteToConsole();
-
-    //testing find
-    std::cout << " " << std::endl;
-
-    MyString myStringDefault2;
-    myStringDefault2.WriteToConsole();
+    //std::cout << myStringDefault.CStr() << std::endl;
 
 
-    MyString findCon("Con");
+    ////Testing ToLower
+    //std::cout << " " << std::endl;
 
-    std::cout << myStringDefault2.Find(findCon) << std::endl;
+    //myStringCopy.ToLower();
+    //myStringCopy.WriteToConsole();
+
+
+    ////testing ToUpper
+    //std::cout << " " << std::endl;
+
+    //myStringCopy.ToUpper();
+    //myStringCopy.WriteToConsole();
+
+    ////testing find
+    //std::cout << " " << std::endl;
+
+    //
+    //myStringDefault2.WriteToConsole();
+
+
+    //MyString findCon("Con");
+
+    //std::cout << myStringDefault2.Find(findCon) << std::endl;
 
 
     //testing replace
