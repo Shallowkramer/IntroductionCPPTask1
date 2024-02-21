@@ -282,7 +282,6 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 	char* tempString;
 	
-	//Find needs to find every instance where _find exists in string 
 	if (strlen(_find) <= Length())
 	{
 		 allInstances = FindAllInstances(_find);
@@ -291,11 +290,15 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 		 tempString = new char[newLength];
 
+		 tempString[0] = '\0';
+
 
 		 for (int i = 0; i < LengthAllInstances(allInstances, initialLength); i++)
 		 {
-			 strcpy_s(tempString, newLength, SplitString(allInstances[i], allInstances[i]));
+			 strcpy_s(tempString, newLength, SplitString(allInstances[i-1], allInstances[i]));
 			 
+			 strcat_s(tempString, newLength, _replace);
+
 			 std::cout << tempString << std::endl;
 		 }
 		
