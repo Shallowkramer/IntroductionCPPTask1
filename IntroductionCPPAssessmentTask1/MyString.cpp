@@ -253,8 +253,9 @@ int MyString::Find(const MyString& c)
 char* MyString::SplitString(int splitStringStart, int splitStringEnd)
 {
 	char* newString = new char[splitStringEnd];
+	splitStringStart++;
 
-	for (int i = 0; i <= splitStringEnd; i++)
+	for (int i = splitStringStart; i <= splitStringEnd; i++)
 	{
 		if (i == splitStringEnd)
 		{
@@ -295,7 +296,15 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 		 for (int i = 0; i < LengthAllInstances(allInstances, initialLength); i++)
 		 {
-			 strcpy_s(tempString, newLength, SplitString(allInstances[i-1], allInstances[i]));
+			 if (i == 0)
+			 {
+				 strcpy_s(tempString, newLength, SplitString(0, allInstances[i]));
+			 }
+			 else
+			 {
+				 strcpy_s(tempString, newLength, SplitString(allInstances[i - 1], allInstances[i]));
+			 }
+			 
 			 
 			 strcat_s(tempString, newLength, _replace);
 
