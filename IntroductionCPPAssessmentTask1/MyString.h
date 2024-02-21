@@ -66,7 +66,7 @@ private:
 	
 	int* FindAllInstances(const char* c);
 	int LengthAllInstances(const int* allInstances, int initialLength);
-	char* SplitString(int splitStringAt);
+	char* SplitString(int splitStringStart, int splitStringEnd);
 
 };
 

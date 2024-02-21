@@ -250,13 +250,13 @@ int MyString::Find(const MyString& c)
 	return Find(0, c);
 }
 
-char* MyString::SplitString(int splitStringAt)
+char* MyString::SplitString(int splitStringStart, int splitStringEnd)
 {
-	char* newString = new char[splitStringAt];
+	char* newString = new char[splitStringEnd];
 
-	for (int i = 0; i <= splitStringAt; i++)
+	for (int i = 0; i <= splitStringEnd; i++)
 	{
-		if (i == splitStringAt)
+		if (i == splitStringEnd)
 		{
 			newString[i] = '\0';
 		}
@@ -266,7 +266,7 @@ char* MyString::SplitString(int splitStringAt)
 		}		
 	}
 	
-	std::cout << newString << std::endl;
+	/*std::cout << newString << std::endl;*/
 
 	return newString;
 }
@@ -294,7 +294,7 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 		 for (int i = 0; i < LengthAllInstances(allInstances, initialLength); i++)
 		 {
-			 strcpy_s(tempString, newLength, SplitString(allInstances[i]));
+			 strcpy_s(tempString, newLength, SplitString(allInstances[i], allInstances[i]));
 			 
 			 std::cout << tempString << std::endl;
 		 }
