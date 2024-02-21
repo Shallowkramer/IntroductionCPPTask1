@@ -250,14 +250,14 @@ int MyString::Find(const MyString& c)
 	return Find(0, c);
 }
 
-char* MyString::SplitString(int splitStringStart, int splitStringEnd)
+char* MyString::SplitString(int splitStringStart, int splitStringEnd, const char* find)
 {
 	int indexer = 0;
 
 	char* newString = new char[splitStringEnd];
 	if (splitStringStart != 0)
 	{
-		splitStringStart++;
+		splitStringStart += strlen(find);
 	}
 	
 
@@ -305,23 +305,23 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 		 {
 			 if (i == 0)
 			 {
-				 strcpy_s(newString, newLength, SplitString(0, allInstances[i]));
+				 strcpy_s(newString, newLength, SplitString(0, allInstances[i], _find));
 			 }
 			 else
 			 {
-				 strcat_s(newString, newLength, SplitString(allInstances[i - 1], allInstances[i]));
+				 strcat_s(newString, newLength, SplitString(allInstances[i - 1], allInstances[i], _find));
 			 }
 			 
 			 
 			 strcat_s(newString, newLength, _replace);
 
-			 /*std::cout << newString << std::endl;*/
+			 std::cout << newString << std::endl;
 		 }
 
 		 /*std::cout << allInstances[LengthAllInstances(allInstances, initialLength)-1] << std::endl;
 		 std::cout << initialLength;*/
 
-		 strcat_s(newString, newLength, SplitString(allInstances[LengthAllInstances(allInstances, initialLength)-1], initialLength));
+		 strcat_s(newString, newLength, SplitString(allInstances[LengthAllInstances(allInstances, initialLength)-1], initialLength, _find));
 		 /*std::cout << newString << std::endl;*/
 	}
 	else
