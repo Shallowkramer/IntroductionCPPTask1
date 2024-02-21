@@ -309,7 +309,7 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 			 }
 			 else
 			 {
-				 strcpy_s(newString, newLength, SplitString(allInstances[i - 1], allInstances[i]));
+				 strcat_s(newString, newLength, SplitString(allInstances[i - 1], allInstances[i]));
 			 }
 			 
 			 
