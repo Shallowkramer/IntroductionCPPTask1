@@ -294,7 +294,7 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 	{
 		 allInstances = FindAllInstances(_find);
 
-		 newLength = LengthNullIncluded() + ((strlen(_replace) - strlen(_find)) * LengthAllInstances(allInstances, initialLength));
+		 newLength = 100; /*LengthNullIncluded() + ((strlen(_replace) - strlen(_find)) * LengthAllInstances(allInstances, initialLength));*/
 
 		 newString = new char[newLength];
 
@@ -317,7 +317,10 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 			 std::cout << newString << std::endl;
 		 }
-		
+
+
+		 strcat_s(newString, newLength, SplitString(allInstances[2], 19));
+		 std::cout << newString << std::endl;
 	}
 
 	return string;
