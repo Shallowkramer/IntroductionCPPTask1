@@ -214,6 +214,8 @@ int* MyString::FindAllInstances(const char* c)
 		findInstances[i] = -1;
 	}
 
+	//could not use find as it does not have a custom indexer
+	//custom indexer makes is used to compare findInstances with index that is found
 	if (strlen(c) <= Length())
 	{
 		int findInstancesIndexer = 0;
@@ -255,12 +257,14 @@ char* MyString::SplitString(int splitStringStart, int splitStringEnd, const char
 	int indexer = 0;
 
 	char* newString = new char[splitStringEnd];
+
+	//if split string start is not equal to 0 increase it by the length of find
 	if (splitStringStart != 0)
 	{
 		splitStringStart += strlen(find);
 	}
 	
-
+	//takes new string and cycles through to replace with string input prior to split string end
 	for (int i = splitStringStart; i <= splitStringEnd; i++)
 	{
 		if (i == splitStringEnd)
@@ -281,6 +285,7 @@ char* MyString::SplitString(int splitStringStart, int splitStringEnd, const char
 
 MyString MyString::Replace(const char* _find, const char* _replace)
 {
+	//Declaration of variables
 	const int initialLength = Length();
 
 	int amountOfPlacesFindExists =0;
@@ -312,12 +317,13 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 				 strcat_s(newString, newLength, SplitString(allInstances[i - 1], allInstances[i], _find));
 			 }
 			 
-			 
+			 //adds replaced string in
 			 strcat_s(newString, newLength, _replace);
 
 			 std::cout << newString << std::endl;
 		 }
 
+		 //if nothing can be replaced returns string
 		 if (allInstances[0] == -1)
 		 {
 			 return string;
@@ -328,15 +334,11 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 		 strcat_s(newString, newLength, SplitString(allInstances[LengthAllInstances(allInstances, initialLength) - 1], initialLength, _find));
 		 /*std::cout << newString << std::endl;*/
-	}
-	else
-	{
-		return string;
-	}
 
-	delete[] string;
+		 delete[] string;
 
-	string = newString;
+		 string = newString;
+	}
 
 	return string;
 }

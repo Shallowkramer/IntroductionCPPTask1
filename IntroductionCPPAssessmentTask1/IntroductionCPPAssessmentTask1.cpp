@@ -75,7 +75,7 @@ int main()
 
 
     //testing replace
-    /*std::cout << std::endl;
+    std::cout << std::endl;
 
     myStringDefault2.Replace("t", "hi");
 
@@ -86,7 +86,7 @@ int main()
 
     myStringDefault2.Replace("hi", "t");
 
-    myStringDefault2.WriteToConsole();*/
+    myStringDefault2.WriteToConsole();
 
 
     std::cout << std::endl;
