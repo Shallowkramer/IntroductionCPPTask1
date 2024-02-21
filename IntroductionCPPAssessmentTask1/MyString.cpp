@@ -253,7 +253,11 @@ int MyString::Find(const MyString& c)
 char* MyString::SplitString(int splitStringStart, int splitStringEnd)
 {
 	char* newString = new char[splitStringEnd];
-	splitStringStart++;
+	if (splitStringStart != 0)
+	{
+		splitStringStart++;
+	}
+	
 
 	for (int i = splitStringStart; i <= splitStringEnd; i++)
 	{
