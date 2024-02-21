@@ -37,7 +37,6 @@ public:
 
 	
 
-	char* SplitString(int splitStringAt);
 
 	MyString Replace(const char* _find, const char* _replace);
 
@@ -63,8 +62,11 @@ private:
 
 	//Functions
 	bool CompareAt(int index, const char* c);
+
+	
 	int* FindAllInstances(const char* c);
 	int LengthAllInstances(const int* allInstances, int initialLength);
+	char* SplitString(int splitStringAt);
 
 };
 

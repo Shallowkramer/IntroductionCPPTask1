@@ -252,7 +252,7 @@ int MyString::Find(const MyString& c)
 
 char* MyString::SplitString(int splitStringAt)
 {
-	char* newString = new char[splitStringAt+1];
+	char* newString = new char[splitStringAt];
 
 	for (int i = 0; i <= splitStringAt; i++)
 	{
@@ -266,7 +266,7 @@ char* MyString::SplitString(int splitStringAt)
 		}		
 	}
 	
-	/*std::cout << newString << std::endl;*/
+	std::cout << newString << std::endl;
 
 	return newString;
 }
@@ -281,8 +281,6 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 	int newLength;
 
 	char* tempString;
-
-
 	
 	//Find needs to find every instance where _find exists in string 
 	if (strlen(_find) <= Length())
@@ -293,9 +291,12 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 		 tempString = new char[newLength];
 
+
 		 for (int i = 0; i < LengthAllInstances(allInstances, initialLength); i++)
 		 {
+			 strcpy_s(tempString, newLength, SplitString(allInstances[i]));
 			 
+			 std::cout << tempString << std::endl;
 		 }
 		
 	}
