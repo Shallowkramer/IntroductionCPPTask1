@@ -205,6 +205,44 @@ int MyString::Find(int _startIndex, const char* c)
 	return -1;
 }
 
+int* MyString::FindAllInstances(const char* c)
+{
+	int* findInstances = new int[Length()];
+	
+	for (int i = 0; i < Length(); i++)
+	{
+		findInstances[i] = -1;
+	}
+
+	if (strlen(c) <= Length())
+	{
+		int findInstancesIndexer = 0;
+
+		for (int i =0; i<Length() - strlen(c); i++)
+		{
+			if (CompareAt(i, c))
+			{
+				findInstances[findInstancesIndexer] = i;
+
+				findInstancesIndexer++;
+			}
+		}
+	}
+
+	return findInstances;
+}
+
+int MyString::LengthAllInstances(const int* allInstances, int initialLength)
+{
+	for (int i = 0; i < Length(); i++)
+	{
+		if (allInstances[i] == -1)
+		{
+			return i;
+		}
+	}
+}
+
 
 
 int MyString::Find(const MyString& c)
@@ -235,7 +273,34 @@ char* MyString::SplitString(int splitStringAt)
 
 MyString MyString::Replace(const char* _find, const char* _replace)
 {
+	const int initialLength = Length();
+
+	int amountOfPlacesFindExists =0;
+	int* allInstances;
 	
+	int newLength;
+
+	char* tempString;
+
+
+	
+	//Find needs to find every instance where _find exists in string 
+	if (strlen(_find) <= Length())
+	{
+		 allInstances = FindAllInstances(_find);
+
+		 newLength = LengthNullIncluded() + ((strlen(_replace) - strlen(_find)) * LengthAllInstances(allInstances, initialLength));
+
+		 tempString = new char[newLength];
+
+		 for (int i = 0; i < LengthAllInstances(allInstances, initialLength); i++)
+		 {
+			 
+		 }
+		
+	}
+
+	return string;
 }
 
 void MyString::ReadFromConsole()
