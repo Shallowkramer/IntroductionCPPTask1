@@ -63,7 +63,7 @@ char MyString::CharacterAt(size_t _index)
 
 bool MyString::EqualTo(const MyString& _str)
 {
-	if (strcmp(string, _str.string) == 0)
+	if (strcmp(string, _str.string) == 0 || strlen(string) == strlen(_str.string))
 	{
 		return true;
 	}
@@ -320,7 +320,7 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 			 //adds replaced string in
 			 strcat_s(newString, newLength, _replace);
 
-			 std::cout << newString << std::endl;
+			/* std::cout << newString << std::endl;*/
 		 }
 
 		 //if nothing can be replaced returns string
@@ -355,27 +355,43 @@ void MyString::WriteToConsole()
 
 
 
-//bool MyString::operator==(const MyString& _other)
-//{
-//	return false;
-//}
-//
-//bool MyString::operator!=(const MyString& _other)
-//{
-//	return false;
-//}
-//
-//MyString& MyString::operator=(const MyString& _str)
-//{
-//	// TODO: insert return statement here
-//}
-//
-//char& MyString::operator[](size_t _index)
-//{
-//	// TODO: insert return statement here
-//}
-//
-//const char& MyString::operator[](size_t _index) const
-//{
-//	// TODO: insert return statement here
-//}
+bool MyString::operator==(const MyString& _other)
+{
+	return EqualTo(_other);
+}
+
+bool MyString::operator!=(const MyString& _other)
+{
+	return !(EqualTo(_other));
+}
+
+MyString& MyString::operator=(const MyString& _str)
+{
+	int length = _str.LengthNullIncluded();
+
+	this->string = new char[length];
+
+	//input string being copied to new string
+	strcpy_s(this->string, length, _str.string);
+
+	return *this;
+}
+
+char& MyString::operator[](size_t _index)
+{
+	return this->string[_index];
+}
+
+const char& MyString::operator[](size_t _index) const
+{
+	return this->string[_index];
+}
+
+bool MyString::operator<(const MyString& _str)
+{
+	if (strcmp(this->string, _str.string)==-1)
+	{
+		return true;
+	}
+	return false;
+}

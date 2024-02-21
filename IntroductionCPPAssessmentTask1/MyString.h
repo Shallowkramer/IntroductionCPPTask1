@@ -53,6 +53,7 @@ public:
 	char& operator[](size_t _index);
 	const char& operator[](size_t _index) const;
 
+	bool operator<(const MyString& _str);
 
 	//Public Variables
 
