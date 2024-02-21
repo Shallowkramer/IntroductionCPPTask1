@@ -8,10 +8,13 @@ int main()
 {
     MyString myStringDefault;
     MyString myStringDefault2;
+    MyString equalityTest;
+    MyString equalityTest2;
     MyString myStringCustom1 ("Custom1 String");
     MyString myStringCustom2 ("Custom1 String");
-    MyString myStringCustom3("Defaultt Consttructtor");
+    MyString myStringCustom3 ("Defaultt Consttructtor");
     MyString myStringCopy (myStringDefault);
+    
 
 
     //Testing CharacterAt
@@ -95,4 +98,66 @@ int main()
 
     myStringCustom3.WriteToConsole();
 
+
+    //testing read from console
+    std::cout << std::endl;
+
+    myStringDefault.ReadFromConsole();
+
+    std::cout << std::endl;
+
+    myStringDefault.WriteToConsole();
+
+
+    //Equality Operator
+    std::cout << std::endl;
+
+    if (equalityTest == equalityTest2)
+    {
+        std::cout << "equal" << std::endl;
+    }
+    else
+    {
+        std::cout << "not equal" << std::endl;
+    }
+
+
+    //Inequality Operator
+    std::cout << std::endl;
+
+    if (equalityTest != equalityTest2)
+    {
+        std::cout << "not equal" << std::endl;
+    }
+    else
+    {
+        std::cout << "equal" << std::endl;
+    }
+
+
+    //Subscript operator
+    std::cout << std::endl;
+
+    std::cout << myStringDefault2[0] << std::endl;
+
+    
+    //Assignment Operator
+    std::cout << std::endl;
+
+    myStringCustom1 = myStringDefault2;
+
+    myStringCustom1.WriteToConsole();
+
+
+    //Less Than Operator
+    std::cout << std::endl;
+
+    if (equalityTest < myStringCustom3)
+    {
+        std::cout << "equalityTest comes before myStringCustom3" << std::endl;
+    }
+    else
+    {
+        std::cout << "equalityTest does NOT comes before myStringCustom3" << std::endl;
+    }
 }

@@ -55,6 +55,9 @@ public:
 
 	bool operator<(const MyString& _str);
 
+	MyString operator+(const MyString& _other);
+	MyString operator+=(const MyString& _other);
+
 	//Public Variables
 
 private:

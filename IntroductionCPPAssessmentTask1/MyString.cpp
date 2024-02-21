@@ -345,7 +345,18 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 
 void MyString::ReadFromConsole()
 {
-	
+	const int inputBuffer = 500;
+
+	char* input = new char[inputBuffer];
+
+	std::cin.getline(input, inputBuffer);
+
+
+	delete[] string;
+
+	string = new char[strlen(input) + 1];
+
+	string = input;
 }
 
 void MyString::WriteToConsole()
