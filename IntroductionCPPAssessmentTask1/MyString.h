@@ -35,7 +35,7 @@ public:
 	int Find(const char* c);
 	int Find(int _startIndex, const char* c);
 
-	MyString SplitString(int splitStringAt);
+	char* SplitString(int splitStringAt);
 
 	MyString Replace(const char* _find, const char* _replace);
 

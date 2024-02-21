@@ -191,7 +191,7 @@ int MyString::Find(const char* c)
 
 int MyString::Find(int _startIndex, const char* c)
 {
-	if (strlen(c) < Length())
+	if (strlen(c) <= Length())
 	{
 		for (int i = _startIndex; i < Length() - strlen(c); i++)
 		{
@@ -212,7 +212,7 @@ int MyString::Find(const MyString& c)
 	return Find(0, c);
 }
 
-MyString MyString::SplitString(int splitStringAt)
+char* MyString::SplitString(int splitStringAt)
 {
 	char* newString = new char[splitStringAt+1];
 
@@ -235,44 +235,7 @@ MyString MyString::SplitString(int splitStringAt)
 
 MyString MyString::Replace(const char* _find, const char* _replace)
 {
-	/*int* locations;*/
-
-	int diff = strlen(_replace) - strlen(_find);
-
-	int length = LengthNullIncluded() + diff;
-
-	char* tempString = new char[length];
-	tempString[0] = '\0';
-
-	if (strlen(_find) < Length())
-	{
-		for (int i = 0; i < Length(); i++)
-		{
-			if (Find(_find) != -1)
-			{
-				strcat_s(tempString, length, (SplitString(i).Append(_replace).string));
-
-				std::cout << "find should happen when i=6" << std::endl;
-				std::cout << i << std::endl;
-			}
-			else
-			{
-				//appends strings
-				
-
-				std::cout << "find did find should happen when i=6" << std::endl;
-				
-			}
-		}
-	}
-
-	std::cout << tempString << std::endl;
-
-	delete[] string;
-
-	string = tempString;
 	
-	return string;
 }
 
 void MyString::ReadFromConsole()
