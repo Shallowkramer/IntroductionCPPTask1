@@ -10,6 +10,7 @@ int main()
     MyString myStringDefault2;
     MyString myStringCustom1 ("Custom1 String");
     MyString myStringCustom2 ("Custom1 String");
+    MyString myStringCustom3("Defaultt Consttructtor");
     MyString myStringCopy (myStringDefault);
 
 
@@ -74,7 +75,7 @@ int main()
 
 
     //testing replace
-    std::cout << std::endl;
+    /*std::cout << std::endl;
 
     myStringDefault2.Replace("t", "hi");
 
@@ -85,6 +86,13 @@ int main()
 
     myStringDefault2.Replace("hi", "t");
 
-    myStringDefault2.WriteToConsole();
+    myStringDefault2.WriteToConsole();*/
+
+
+    std::cout << std::endl;
+
+    myStringCustom3.Replace("hi", "t");
+
+    myStringCustom3.WriteToConsole();
 
 }

@@ -318,10 +318,15 @@ MyString MyString::Replace(const char* _find, const char* _replace)
 			 std::cout << newString << std::endl;
 		 }
 
+		 if (allInstances[0] == -1)
+		 {
+			 return string;
+		 }
+		 
 		 /*std::cout << allInstances[LengthAllInstances(allInstances, initialLength)-1] << std::endl;
 		 std::cout << initialLength;*/
 
-		 strcat_s(newString, newLength, SplitString(allInstances[LengthAllInstances(allInstances, initialLength)-1], initialLength, _find));
+		 strcat_s(newString, newLength, SplitString(allInstances[LengthAllInstances(allInstances, initialLength) - 1], initialLength, _find));
 		 /*std::cout << newString << std::endl;*/
 	}
 	else
