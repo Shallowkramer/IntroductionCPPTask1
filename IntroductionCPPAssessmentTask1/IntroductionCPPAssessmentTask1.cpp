@@ -2,7 +2,9 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "MyString.h"
+using namespace std;
 
 void TestLength();
 void TestCharacterAt();
@@ -23,11 +25,17 @@ void TestAssignementOperator();
 void TestLessThanOperator();
 void TestPrintSuccessFail(bool input);
 
+const char* PrintDateAndTime();
+
 void TestEverythingMyString();
+
+void WriteToFileTests();
 
 int main()
 {
-    TestEverythingMyString();
+    WriteToFileTests();
+
+
 }
 
 void TestLength()
@@ -178,6 +186,72 @@ void TestPrintSuccessFail(bool input)
     }
 }
 
+const char* PrintDateAndTime()
+{
+    struct tm newTime;
+    time_t now = time(0);
+    localtime_s(&newTime, &now);
+    int sec = newTime.tm_sec;
+    int minute = newTime.tm_min;
+    int hour = newTime.tm_hour;
+    int day = newTime.tm_mday;
+    int month = 1 + newTime.tm_mon;
+    int year = newTime.tm_year + 1900;
+
+   /* MyString tempString("The Date is: ");
+    tempString.Append((char*)day);
+    tempString.Append("/");
+    tempString.Append((char*)month);
+    tempString.Append("/");
+    tempString.Append((char*)year);
+
+   
+
+    tempString.Append("The time is: ");
+    tempString.Append((char*)hour);
+    tempString.Append(":");
+    tempString.Append((char*)minute);
+    tempString.Append(" and ");
+    tempString.Append((char*)sec);
+    tempString.Append(" seconds");*/
+
+   /* tempString.WriteToConsole();*/
+
+    
+
+    /*char* string = new char[10];
+
+    string[1] = '\0';*/
+
+    
+
+    /*strcat_s(string, 10, (char*)test);*/
+
+    //documentation for method used: https://cplusplus.com/reference/cstdio/snprintf/
+    int test = 150;
+
+    char buffer[100];
+    int cx;
+
+    cx = snprintf(buffer, 100, "The half of %d is %d", test, test / 2);
+
+    if (cx >= 0 && cx < 100)      // check returned value
+    {
+        snprintf(buffer + cx, 100 - cx, ", and the half of that is %d.", test / 2 / 2);
+    }
+
+        
+
+    puts(buffer);
+   /* std::cout << string << std::endl;*/
+    
+    
+
+
+
+    return "a";
+}
+
 void TestEverythingMyString()
 {
     TestLength();
@@ -197,4 +271,12 @@ void TestEverythingMyString()
     TestSubscriptOperator();
     TestAssignementOperator();
     TestLessThanOperator();
+}
+
+void WriteToFileTests()
+{
+    std::fstream tests;
+
+    PrintDateAndTime();
+    /*TestEverythingMyString();*/
 }
