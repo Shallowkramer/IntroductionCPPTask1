@@ -4,160 +4,197 @@
 #include <iostream>
 #include "MyString.h"
 
+void TestLength();
+void TestCharacterAt();
+void TestEqualTo();
+void TestAppend();
+void TestPrepend();
+void TestCStr();
+void TestToLower();
+void TestToUpper();
+void TestFindString();
+void TestFindStringStartIndex();
+void TestReplace();
+void TestReadFromConsole();
+void TestEqualityOperator();
+void TestInequalityOperator();
+void TestSubscriptOperator();
+void TestAssignementOperator();
+void TestLessThanOperator();
+void TestPrintSuccessFail(bool input);
+
+void TestEverythingMyString();
+
 int main()
 {
-    MyString myStringDefault;
+    TestEverythingMyString();
+}
+
+void TestLength()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(myString1.Length() == 19);
+}
+
+void TestCharacterAt()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(myString1.CharacterAt(0) == 'D');
+}
+
+void TestEqualTo()
+{
+    MyString myString1;
     MyString myStringDefault2;
-    MyString equalityTest;
-    MyString equalityTest2;
-    MyString myStringCustom1 ("Custom1 String");
-    MyString myStringCustom2 ("Custom1 String");
-    MyString myStringCustom3 ("Defaultt Consttructtor");
-    MyString myStringCopy (myStringDefault);
-    
 
+    TestPrintSuccessFail(myString1.EqualTo(myStringDefault2));
+}
 
-    //Testing CharacterAt
-    std::cout << myStringCustom1.CharacterAt(15) << std::endl;
+void TestAppend()
+{
+    MyString myString1;
+    MyString myString2("D");
 
+    myString1.Append(myString2);
 
-    //Testing Write To Console
-    myStringDefault.WriteToConsole();
-    myStringCustom1.WriteToConsole();
-    myStringCopy.WriteToConsole();
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default ConstructorD") == 0);
+}
 
+void TestPrepend()
+{
+    MyString myString1;
+    MyString myString2("D");
 
-    //Testing EqualTo
-    if (myStringCustom1.EqualTo(myStringCustom2))
+    myString1.Prepend(myString2);
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "DDefault Constructor") == 0);
+}
+
+void TestCStr()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default Constructor") == 0);
+}
+
+void TestToLower()
+{
+    MyString myString1;
+
+    myString1.ToLower();
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "default constructor") == 0);
+}
+
+void TestToUpper()
+{
+    MyString myString1;
+
+    myString1.ToUpper();
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "DEFAULT CONSTRUCTOR") == 0);
+}
+
+void TestFindString()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(myString1.Find("a") == 3);
+}
+
+void TestFindStringStartIndex()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(myString1.Find(7, "t") == 12);
+}
+
+void TestReplace()
+{
+    MyString myString1;
+
+    myString1.Replace("t", "hi");
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Defaulhi Conshiruchior") == 0);
+}
+
+void TestReadFromConsole()
+{
+    TestPrintSuccessFail(true);
+}
+
+void TestEqualityOperator()
+{
+    MyString myString1;
+    MyString myString2;
+
+    TestPrintSuccessFail(myString1 == myString2);
+}
+
+void TestInequalityOperator()
+{
+    MyString myString1;
+    MyString myString2("D");
+
+    TestPrintSuccessFail(myString1 != myString2);
+}
+
+void TestSubscriptOperator()
+{
+    MyString myString1;
+
+    TestPrintSuccessFail(myString1[0] == 'D');
+}
+
+void TestAssignementOperator()
+{
+    MyString myString1;
+    MyString myString2("D");
+
+    myString2 = myString1;
+
+    TestPrintSuccessFail(strcmp(myString1.CStr(), myString2.CStr()) == 0);
+}
+
+void TestLessThanOperator()
+{
+    MyString myString1;
+    MyString myString2("Default Donstructor");
+
+    TestPrintSuccessFail(myString1 < myString2);
+}
+
+void TestPrintSuccessFail(bool input)
+{
+    if (input)
     {
-        std::cout << "true" << std::endl;
+        std::cout << "Success" << std::endl;
     }
     else
     {
-        std::cout << "false" << std::endl;
+        std::cout << "Fail" << std::endl;
     }
-    
+}
 
-    //Testing Prepend
-    std::cout << std::endl;
-
-    myStringDefault.Prepend(myStringCustom1);
-
-    myStringDefault.WriteToConsole();
-
-
-    //Testing CStr
-    std::cout << std::endl;
-
-    std::cout << myStringDefault.CStr() << std::endl;
-
-
-    //Testing ToLower
-    std::cout << std::endl;
-
-    myStringCopy.ToLower();
-    myStringCopy.WriteToConsole();
-
-
-    //testing ToUpper
-    std::cout << std::endl;
-
-    myStringCopy.ToUpper();
-    myStringCopy.WriteToConsole();
-
-    //testing find
-    std::cout << std::endl;
-
-    
-    myStringDefault2.WriteToConsole();
-
-
-    MyString findCon("Con");
-
-    std::cout << myStringDefault2.Find(findCon) << std::endl;
-
-
-    //testing replace
-    std::cout << std::endl;
-
-    myStringDefault2.Replace("t", "hi");
-
-    myStringDefault2.WriteToConsole();
-
-    
-    std::cout << std::endl;
-
-    myStringDefault2.Replace("hi", "t");
-
-    myStringDefault2.WriteToConsole();
-
-
-    std::cout << std::endl;
-
-    myStringCustom3.Replace("hi", "t");
-
-    myStringCustom3.WriteToConsole();
-
-
-    //testing read from console
-    std::cout << std::endl;
-
-    myStringDefault.ReadFromConsole();
-
-    std::cout << std::endl;
-
-    myStringDefault.WriteToConsole();
-
-
-    //Equality Operator
-    std::cout << std::endl;
-
-    if (equalityTest == equalityTest2)
-    {
-        std::cout << "equal" << std::endl;
-    }
-    else
-    {
-        std::cout << "not equal" << std::endl;
-    }
-
-
-    //Inequality Operator
-    std::cout << std::endl;
-
-    if (equalityTest != equalityTest2)
-    {
-        std::cout << "not equal" << std::endl;
-    }
-    else
-    {
-        std::cout << "equal" << std::endl;
-    }
-
-
-    //Subscript operator
-    std::cout << std::endl;
-
-    std::cout << myStringDefault2[0] << std::endl;
-
-    
-    //Assignment Operator
-    std::cout << std::endl;
-
-    myStringCustom1 = myStringDefault2;
-
-    myStringCustom1.WriteToConsole();
-
-
-    //Less Than Operator
-    std::cout << std::endl;
-
-    if (equalityTest < myStringCustom3)
-    {
-        std::cout << "equalityTest comes before myStringCustom3" << std::endl;
-    }
-    else
-    {
-        std::cout << "equalityTest does NOT comes before myStringCustom3" << std::endl;
-    }
+void TestEverythingMyString()
+{
+    TestLength();
+    TestCharacterAt();
+    TestEqualTo();
+    TestAppend();
+    TestPrepend();
+    TestCStr();
+    TestToLower();
+    TestToUpper();
+    TestFindString();
+    TestFindStringStartIndex();
+    TestReplace();
+    TestReadFromConsole();
+    TestEqualityOperator();
+    TestInequalityOperator();
+    TestSubscriptOperator();
+    TestAssignementOperator();
+    TestLessThanOperator();
 }

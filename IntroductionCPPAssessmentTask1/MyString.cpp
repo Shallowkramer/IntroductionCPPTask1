@@ -380,6 +380,8 @@ MyString& MyString::operator=(const MyString& _str)
 {
 	int length = _str.LengthNullIncluded();
 
+	delete[] this->string;
+
 	this->string = new char[length];
 
 	//input string being copied to new string
