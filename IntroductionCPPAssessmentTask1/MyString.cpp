@@ -19,6 +19,20 @@ MyString::MyString(const char* _str)
 	strcpy_s(string, length, _str);
 }
 
+MyString::MyString(const int _int)
+{
+	//TODO calculations for new buffersize
+	int bufferSize = 55;
+
+	//holds length of snprinf
+	int cx;
+
+	string = new char[bufferSize];
+	
+	//snprintf documentation: https://cplusplus.com/reference/cstdio/snprintf/
+	cx = snprintf(string, bufferSize, "%d", _int);
+}
+
 MyString::MyString(const MyString& _other)
 {
 	int length = _other.LengthNullIncluded();
@@ -361,7 +375,7 @@ void MyString::ReadFromConsole()
 
 void MyString::WriteToConsole()
 {
-	std::cout << string << std::endl;
+	std::cout << CStr() << std::endl;
 }
 
 

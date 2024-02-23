@@ -197,51 +197,30 @@ const char* PrintDateAndTime()
     int day = newTime.tm_mday;
     int month = 1 + newTime.tm_mon;
     int year = newTime.tm_year + 1900;
-
-   /* MyString tempString("The Date is: ");
-    tempString.Append((char*)day);
-    tempString.Append("/");
-    tempString.Append((char*)month);
-    tempString.Append("/");
-    tempString.Append((char*)year);
-
-   
-
-    tempString.Append("The time is: ");
-    tempString.Append((char*)hour);
-    tempString.Append(":");
-    tempString.Append((char*)minute);
-    tempString.Append(" and ");
-    tempString.Append((char*)sec);
-    tempString.Append(" seconds");*/
-
-   /* tempString.WriteToConsole();*/
-
     
-
-    /*char* string = new char[10];
-
-    string[1] = '\0';*/
-
-    
-
-    /*strcat_s(string, 10, (char*)test);*/
+    //should print "The Date is: (day)/(month)/year The time is: (hour):(minute).(sec)"
 
     //documentation for method used: https://cplusplus.com/reference/cstdio/snprintf/
     int test = -100;
 
-    int bufferSize = 55;
+    //int bufferSize = 55;
 
-    int cx;
+    //int cx;
 
-    char* buffer = new char[bufferSize];
+    //char* buffer = new char[bufferSize];
 
-    cx = snprintf(buffer, bufferSize, "The half of %d is %d", test, test / 2);
+    //cx = snprintf(buffer, bufferSize, "The half of %d is %d", test, test / 2);
 
-          // check returned value
-    snprintf(buffer + cx, bufferSize - cx, ", and the half of that is %d.", test / 2 / 2);
+    //if (0 <= cx && cx<bufferSize) //checks to see if the length of snprintf is negative and is smaller than buffersize
+    //{
+    //    snprintf(buffer + cx, bufferSize - cx, ", and the half of that is %d.", test / 2 / 2);
+    //}
+    
+    MyString newString(test);
 
-    return buffer;
+    newString.WriteToConsole();
+
+    return newString.CStr();
 }
 
 void TestEverythingMyString()
@@ -268,8 +247,6 @@ void TestEverythingMyString()
 void WriteToFileTests()
 {
     std::fstream tests;
-
-    /*PrintDateAndTime();*/
 
     std::cout << PrintDateAndTime() << std::endl;
     /*TestEverythingMyString();*/
