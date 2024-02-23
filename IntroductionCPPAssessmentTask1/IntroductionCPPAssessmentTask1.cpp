@@ -181,10 +181,14 @@ void TestPrintSuccessFail(bool _bool, const char* _str, const char testFile[10])
     if (_bool)
     {
         tests << _str << " Success" << std::endl;
+
+        std::cout << _str << " Success" << std::endl;
     }
     else
     {
         tests << _str << " Fail" << std::endl;
+
+        std::cout << _str << " Fail" << std::endl;
     }
 
     tests.close();
@@ -278,6 +282,10 @@ void WriteToFileTests()
 
     tests.close();
 
+    printDateAndTime.WriteToConsole();
+    std::cout << std::endl;
+
+
     TestEverythingMyString(testFile);
 
     tests.open(testFile, std::ios::app);
@@ -293,7 +301,5 @@ void WriteToFileTests()
     {
         std::cout << "Error" << std::endl;
     }
-
-
     
 }
