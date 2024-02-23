@@ -194,34 +194,41 @@ MyString PrintDateAndTime()
     int sec = newTime.tm_sec;
     int minute = newTime.tm_min;
     int hour = newTime.tm_hour;
+
     int day = newTime.tm_mday;
     int month = 1 + newTime.tm_mon;
     int year = newTime.tm_year + 1900;
     
-    //should print "The Date is: (day)/(month)/year The time is: (hour):(minute).(sec)"
-
-    //documentation for method used: https://cplusplus.com/reference/cstdio/snprintf/
-    int test = -100;
-
-    //int bufferSize = 55;
-
-    //int cx;
-
-    //char* buffer = new char[bufferSize];
-
-    //cx = snprintf(buffer, bufferSize, "The half of %d is %d", test, test / 2);
-
-    //if (0 <= cx && cx<bufferSize) //checks to see if the length of snprintf is negative and is smaller than buffersize
-    //{
-    //    snprintf(buffer + cx, bufferSize - cx, ", and the half of that is %d.", test / 2 / 2);
-    //}
+    //should print "The Date is: (day)/(month)/year The time is: (hour):(minute):(sec)"
     
-    MyString newString(test);
+    //Creates first half of the string which is the date
+    MyString newString("The Date is: ");
+    MyString stringDay(day);
+    MyString stringMonth(month);
+    MyString stringYear(year);
+
+    newString.Append(stringDay);
+    newString.Append("/");
+    newString.Append(stringMonth);
+    newString.Append("/");
+    newString.Append(stringYear);
 
 
-    newString.WriteToConsole();
+    //The Time is:
+    MyString stringSec(sec);
+    MyString stringMin(minute);
+    MyString stringHour(hour);
 
-    std::cout << newString.CStr() <<std::endl;
+    newString.Append(" The time is: ");
+    newString.Append(stringHour);
+    newString.Append(":");
+    newString.Append(stringMin);
+    newString.Append(":");
+    newString.Append(stringSec);
+
+   /* newString.WriteToConsole();
+
+    std::cout << newString.CStr() <<std::endl;*/
 
     return newString;
 }

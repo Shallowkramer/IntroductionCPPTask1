@@ -22,6 +22,7 @@ public:
 
 	MyString Append(const MyString& _str);
 	MyString Append(const char* _str);
+
 	MyString Prepend(const MyString& _str);
 	MyString Prepend(const char* _str);
 
