@@ -6,184 +6,188 @@
 #include "MyString.h"
 using namespace std;
 
-void TestLength();
-void TestCharacterAt();
-void TestEqualTo();
-void TestAppend();
-void TestPrepend();
-void TestCStr();
-void TestToLower();
-void TestToUpper();
-void TestFindString();
-void TestFindStringStartIndex();
-void TestReplace();
-void TestReadFromConsole();
-void TestEqualityOperator();
-void TestInequalityOperator();
-void TestSubscriptOperator();
-void TestAssignementOperator();
-void TestLessThanOperator();
-void TestPrintSuccessFail(bool input);
+void TestLength(const char testFile[10]);
+void TestCharacterAt(const char testFile[10]);
+void TestEqualTo(const char testFile[10]);
+void TestAppend(const char testFile[10]);
+void TestPrepend(const char testFile[10]);
+void TestCStr(const char testFile[10]);
+void TestToLower(const char testFile[10]);
+void TestToUpper(const char testFile[10]);
+void TestFindString(const char testFile[10]);
+void TestFindStringStartIndex(const char testFile[10]);
+void TestReplace(const char testFile[10]);
+void TestReadFromConsole(const char testFile[10]);
+void TestEqualityOperator(const char testFile[10]);
+void TestInequalityOperator(const char testFile[10]);
+void TestSubscriptOperator(const char testFile[10]);
+void TestAssignementOperator(const char testFile[10]);
+void TestLessThanOperator(const char testFile[10]);
+void TestPrintSuccessFail(bool _bool, const char* _str, const char testFile[10]);
 
 MyString PrintDateAndTime();
 
-void TestEverythingMyString();
+void TestEverythingMyString(const char testFile[10]);
 
 void WriteToFileTests();
 
 int main()
 {
     WriteToFileTests();
-
-
 }
 
-void TestLength()
+void TestLength(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(myString1.Length() == 19);
+    TestPrintSuccessFail(myString1.Length() == 19, "Test Length", testFile);
 }
 
-void TestCharacterAt()
+void TestCharacterAt(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(myString1.CharacterAt(0) == 'D');
+    TestPrintSuccessFail(myString1.CharacterAt(0) == 'D', "Test CharacterAt", testFile);
 }
 
-void TestEqualTo()
+void TestEqualTo(const char testFile[10])
 {
     MyString myString1;
     MyString myStringDefault2;
 
-    TestPrintSuccessFail(myString1.EqualTo(myStringDefault2));
+    TestPrintSuccessFail(myString1.EqualTo(myStringDefault2), "Test EqualTo", testFile);
 }
 
-void TestAppend()
+void TestAppend(const char testFile[10])
 {
     MyString myString1;
     MyString myString2("D");
 
     myString1.Append(myString2);
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default ConstructorD") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default ConstructorD") == 0, "Test Append", testFile);
 }
 
-void TestPrepend()
+void TestPrepend(const char testFile[10])
 {
     MyString myString1;
     MyString myString2("D");
 
     myString1.Prepend(myString2);
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "DDefault Constructor") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "DDefault Constructor") == 0, "Test Prepend", testFile);
 }
 
-void TestCStr()
+void TestCStr(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default Constructor") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Default Constructor") == 0, "Test CStr", testFile);
 }
 
-void TestToLower()
+void TestToLower(const char testFile[10])
 {
     MyString myString1;
 
     myString1.ToLower();
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "default constructor") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "default constructor") == 0, "Test ToLower", testFile);
 }
 
-void TestToUpper()
+void TestToUpper(const char testFile[10])
 {
     MyString myString1;
 
     myString1.ToUpper();
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "DEFAULT CONSTRUCTOR") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "DEFAULT CONSTRUCTOR") == 0, "Test ToUpper", testFile);
 }
 
-void TestFindString()
+void TestFindString(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(myString1.Find("a") == 3);
+    TestPrintSuccessFail(myString1.Find("a") == 3, "Test FindString", testFile);
 }
 
-void TestFindStringStartIndex()
+void TestFindStringStartIndex(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(myString1.Find(7, "t") == 12);
+    TestPrintSuccessFail(myString1.Find(7, "t") == 12, "Test FindStringStartIndex", testFile);
 }
 
-void TestReplace()
+void TestReplace(const char testFile[10])
 {
     MyString myString1;
 
     myString1.Replace("t", "hi");
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), "Defaulhi Conshiruchior") == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), "Defaulhi Conshiruchior") == 0, "Test Replace", testFile);
 }
 
-void TestReadFromConsole()
+void TestReadFromConsole(const char testFile[10])
 {
-    TestPrintSuccessFail(true);
+    TestPrintSuccessFail(true, "Test ReadFromConsole", testFile);
 }
 
-void TestEqualityOperator()
+void TestEqualityOperator(const char testFile[10])
 {
     MyString myString1;
     MyString myString2;
 
-    TestPrintSuccessFail(myString1 == myString2);
+    TestPrintSuccessFail(myString1 == myString2, "Test EqualityOperator", testFile);
 }
 
-void TestInequalityOperator()
+void TestInequalityOperator(const char testFile[10])
 {
     MyString myString1;
     MyString myString2("D");
 
-    TestPrintSuccessFail(myString1 != myString2);
+    TestPrintSuccessFail(myString1 != myString2, "Test InequalityOperator", testFile);
 }
 
-void TestSubscriptOperator()
+void TestSubscriptOperator(const char testFile[10])
 {
     MyString myString1;
 
-    TestPrintSuccessFail(myString1[0] == 'D');
+    TestPrintSuccessFail(myString1[0] == 'D', "Test SubscriptOperator", testFile);
 }
 
-void TestAssignementOperator()
+void TestAssignementOperator(const char testFile[10])
 {
     MyString myString1;
     MyString myString2("D");
 
     myString2 = myString1;
 
-    TestPrintSuccessFail(strcmp(myString1.CStr(), myString2.CStr()) == 0);
+    TestPrintSuccessFail(strcmp(myString1.CStr(), myString2.CStr()) == 0, "Test AssignmentOperator", testFile);
 }
 
-void TestLessThanOperator()
+void TestLessThanOperator(const char testFile[10])
 {
     MyString myString1;
     MyString myString2("Default Donstructor");
 
-    TestPrintSuccessFail(myString1 < myString2);
+    TestPrintSuccessFail(myString1 < myString2, "Test LessThanOperator", testFile);
 }
 
-void TestPrintSuccessFail(bool input)
+void TestPrintSuccessFail(bool _bool, const char* _str, const char testFile[10])
 {
-    if (input)
+    std::fstream tests;
+
+    tests.open(testFile, std::ios::app);
+
+    if (_bool)
     {
-        std::cout << "Success" << std::endl;
+        tests << _str << " Success" << std::endl;
     }
     else
     {
-        std::cout << "Fail" << std::endl;
+        tests << _str << " Fail" << std::endl;
     }
+
+    tests.close();
 }
 
 MyString PrintDateAndTime()
@@ -233,34 +237,63 @@ MyString PrintDateAndTime()
     return newString;
 }
 
-void TestEverythingMyString()
+void TestEverythingMyString(const char testFile[10])
 {
-    TestLength();
-    TestCharacterAt();
-    TestEqualTo();
-    TestAppend();
-    TestPrepend();
-    TestCStr();
-    TestToLower();
-    TestToUpper();
-    TestFindString();
-    TestFindStringStartIndex();
-    TestReplace();
-    TestReadFromConsole();
-    TestEqualityOperator();
-    TestInequalityOperator();
-    TestSubscriptOperator();
-    TestAssignementOperator();
-    TestLessThanOperator();
+    TestLength(testFile);
+    TestCharacterAt(testFile);
+    TestEqualTo(testFile);
+    TestAppend(testFile);
+    TestPrepend(testFile);
+    TestCStr(testFile);
+    TestToLower(testFile);
+    TestToUpper(testFile);
+    TestFindString(testFile);
+    TestFindStringStartIndex(testFile);
+    TestReplace(testFile);
+    TestReadFromConsole(testFile);
+    TestEqualityOperator(testFile);
+    TestInequalityOperator(testFile);
+    TestSubscriptOperator(testFile);
+    TestAssignementOperator(testFile);
+    TestLessThanOperator(testFile);
 }
 
 void WriteToFileTests()
 {
     std::fstream tests;
 
+    const char testFile[10] = "tests.txt";
+
+    tests.open(testFile, std::ios::app);
+    
+    //if cannot open because tests.txt doesn't exists than this will create
+    if (!(tests.is_open()))
+    {
+        tests.open(testFile, std::ios::out);
+    }
     MyString printDateAndTime(PrintDateAndTime());
-    std::cout << printDateAndTime.CStr() << std::endl;
+
+    tests << printDateAndTime.CStr() << std::endl;
+    tests << std::endl;
+
+    tests.close();
+
+    TestEverythingMyString(testFile);
+
+    tests.open(testFile, std::ios::app);
+
+    if (tests.is_open())
+    {
+        tests << std::endl;
+        tests << std::endl;
+
+        tests.close();
+    }
+    else
+    {
+        std::cout << "Error" << std::endl;
+    }
 
 
-    /*TestEverythingMyString();*/
+    
 }

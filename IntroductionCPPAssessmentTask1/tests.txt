@@ -1,0 +1,21 @@
+The Date is: 23/2/2024 The time is: 20:12:1
+
+Test Length Success
+Test CharacterAt Success
+Test EqualTo Success
+Test Append Success
+Test Prepend Success
+Test CStr Success
+Test ToLower Success
+Test ToUpper Success
+Test FindString Success
+Test FindStringStartIndex Success
+Test Replace Success
+Test ReadFromConsole Success
+Test EqualityOperator Success
+Test InequalityOperator Success
+Test SubscriptOperator Success
+Test AssignmentOperator Success
+Test LessThanOperator Success
+
+
