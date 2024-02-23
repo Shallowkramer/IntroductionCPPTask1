@@ -5,6 +5,7 @@ public:
 	//Contructors and deconstructors
 	MyString();
 	MyString(const char* _str);
+	MyString(int _int);
 
 	MyString(const MyString& _other);
 

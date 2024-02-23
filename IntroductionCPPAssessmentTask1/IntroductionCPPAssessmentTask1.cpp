@@ -228,28 +228,20 @@ const char* PrintDateAndTime()
     /*strcat_s(string, 10, (char*)test);*/
 
     //documentation for method used: https://cplusplus.com/reference/cstdio/snprintf/
-    int test = 150;
+    int test = -100;
 
-    char buffer[100];
+    int bufferSize = 55;
+
     int cx;
 
-    cx = snprintf(buffer, 100, "The half of %d is %d", test, test / 2);
+    char* buffer = new char[bufferSize];
 
-    if (cx >= 0 && cx < 100)      // check returned value
-    {
-        snprintf(buffer + cx, 100 - cx, ", and the half of that is %d.", test / 2 / 2);
-    }
+    cx = snprintf(buffer, bufferSize, "The half of %d is %d", test, test / 2);
 
-        
+          // check returned value
+    snprintf(buffer + cx, bufferSize - cx, ", and the half of that is %d.", test / 2 / 2);
 
-    puts(buffer);
-   /* std::cout << string << std::endl;*/
-    
-    
-
-
-
-    return "a";
+    return buffer;
 }
 
 void TestEverythingMyString()
@@ -277,6 +269,8 @@ void WriteToFileTests()
 {
     std::fstream tests;
 
-    PrintDateAndTime();
+    /*PrintDateAndTime();*/
+
+    std::cout << PrintDateAndTime() << std::endl;
     /*TestEverythingMyString();*/
 }
