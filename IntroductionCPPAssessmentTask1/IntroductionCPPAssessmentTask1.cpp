@@ -286,6 +286,7 @@ void WriteToFileTests()
     std::cout << std::endl;
 
 
+
     TestEverythingMyString(testFile);
 
     tests.open(testFile, std::ios::app);
