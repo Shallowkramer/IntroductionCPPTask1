@@ -25,7 +25,7 @@ void TestAssignementOperator();
 void TestLessThanOperator();
 void TestPrintSuccessFail(bool input);
 
-const char* PrintDateAndTime();
+MyString PrintDateAndTime();
 
 void TestEverythingMyString();
 
@@ -186,7 +186,7 @@ void TestPrintSuccessFail(bool input)
     }
 }
 
-const char* PrintDateAndTime()
+MyString PrintDateAndTime()
 {
     struct tm newTime;
     time_t now = time(0);
@@ -218,9 +218,12 @@ const char* PrintDateAndTime()
     
     MyString newString(test);
 
+
     newString.WriteToConsole();
 
-    return newString.CStr();
+    std::cout << newString.CStr() <<std::endl;
+
+    return newString;
 }
 
 void TestEverythingMyString()
@@ -248,6 +251,9 @@ void WriteToFileTests()
 {
     std::fstream tests;
 
-    std::cout << PrintDateAndTime() << std::endl;
+    MyString printDateAndTime(PrintDateAndTime());
+    std::cout << printDateAndTime.CStr() << std::endl;
+
+
     /*TestEverythingMyString();*/
 }
