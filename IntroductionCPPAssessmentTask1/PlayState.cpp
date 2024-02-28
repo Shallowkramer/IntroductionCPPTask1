@@ -161,19 +161,11 @@ void PlayState::DrawGameUI()
 	std::string strScore = std::to_string(score);
 	DrawInfoPanel(strScore.c_str());
 
-	//Draw Healthbar
-	Color healthBarColor = { 255, 0, 0, (maxHealthbarTransparency * 255)};
+	
 
 	DrawRectangle(0, GetScreenHeight() - infoHeight +1, GetScreenWidth() * healthPercentage, 20, healthBarColor);
 
-	//Draw Lives icon
-	for (int i = 0; i < lives; i++)
-	{
-		/*DrawTexture(Assets::imgPlayerLifeIcon,
-			10 + (i * Assets::imgPlayerLifeIcon.width),
-			GetScreenHeight() - infoHeight - (Assets::imgPlayerLifeIcon.height / 2.0f),
-			WHITE);*/
-	}
+
 
 }
 
