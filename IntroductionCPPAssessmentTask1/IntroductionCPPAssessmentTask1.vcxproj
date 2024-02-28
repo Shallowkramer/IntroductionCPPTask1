@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="IntroductionCPPAssessmentTask1.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="TestsMyString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="TestsMyString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
