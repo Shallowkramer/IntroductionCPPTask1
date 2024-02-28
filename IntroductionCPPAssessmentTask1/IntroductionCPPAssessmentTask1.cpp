@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
-    TestsMyString WriteToFileTests();
+    TestsMyString test; 
+    test.WriteToFileTests();
 }
 
