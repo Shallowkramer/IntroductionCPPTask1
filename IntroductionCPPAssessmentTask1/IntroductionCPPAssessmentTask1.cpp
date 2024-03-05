@@ -2,14 +2,16 @@
 //
 
 #include "TestsMyString.h"
-using namespace std;
+#include "Application.h"
 
 
 int main()
 {
-    TestsMyString test; 
-    test.WriteToFileTests();
+    /*TestsMyString test; 
+    test.WriteToFileTests();*/
 
+    Application app;
+    app.Run();
 
 }
 

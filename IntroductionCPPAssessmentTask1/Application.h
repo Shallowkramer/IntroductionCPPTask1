@@ -1,6 +1,7 @@
 #pragma once
 
 #include "InterfaceGameState.h"
+
 #include "raylib.h"
 
 class Application

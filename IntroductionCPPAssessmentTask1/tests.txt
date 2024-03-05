@@ -145,3 +145,45 @@ Test AssignmentOperator Success
 Test LessThanOperator Success
 
 
+The Date is: 5/3/2024 The time is: 16:40:54
+
+Test Length Success
+Test CharacterAt Success
+Test EqualTo Success
+Test Append Success
+Test Prepend Success
+Test CStr Success
+Test ToLower Success
+Test ToUpper Success
+Test FindString Success
+Test FindStringStartIndex Success
+Test Replace Success
+Test ReadFromConsole Success
+Test EqualityOperator Success
+Test InequalityOperator Success
+Test SubscriptOperator Success
+Test AssignmentOperator Success
+Test LessThanOperator Success
+
+
+The Date is: 5/3/2024 The time is: 16:40:57
+
+Test Length Success
+Test CharacterAt Success
+Test EqualTo Success
+Test Append Success
+Test Prepend Success
+Test CStr Success
+Test ToLower Success
+Test ToUpper Success
+Test FindString Success
+Test FindStringStartIndex Success
+Test Replace Success
+Test ReadFromConsole Success
+Test EqualityOperator Success
+Test InequalityOperator Success
+Test SubscriptOperator Success
+Test AssignmentOperator Success
+Test LessThanOperator Success
+
+

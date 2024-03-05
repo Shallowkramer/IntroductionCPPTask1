@@ -8,7 +8,6 @@ enum class EGameState
 	MENU,
 	PLAY,
 	GAMEOVER,
-	HIGHSCORE,
 	CREDITS
 };
 

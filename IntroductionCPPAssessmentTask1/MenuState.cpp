@@ -53,13 +53,9 @@ void MenuState::Update(float deltaTime)
 		}
 		else if (menuSelectedIndex == 1)
 		{
-			app->ChangeState(EGameState::HIGHSCORE);
-		}
-		else if (menuSelectedIndex == 2)
-		{
 			app->ChangeState(EGameState::CREDITS);
 		}
-		else if (menuSelectedIndex == 3)
+		else if (menuSelectedIndex == 2)
 		{
 			app->Quit();
 		}

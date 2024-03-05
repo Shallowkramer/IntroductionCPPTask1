@@ -18,18 +18,21 @@ Application::~Application()
 
 void Application::Run()
 {
+    //prints to console the game window width and window height
     std::cout << config.game.windowWidth << std::endl;
     std::cout << config.game.windowHeight << std::endl;
     
     
-
+    //creates the window
     InitWindow(config.game.windowWidth, config.game.windowHeight, config.game.windowTitle);
+
+    //creates the audio device (currently Unused)
     InitAudioDevice();
 
-
+    //sets the target FPS
     SetTargetFPS(60);
 
-
+    //game starts in the menu game state
     ChangeState(EGameState::MENU);
 
     float bgXOffSet = 0.0f;
@@ -47,8 +50,8 @@ void Application::Run()
         UpdateMusic(deltaTime);
 
 
-        //scroll the background texture
-        bgYOffSet -= 1;
+        ////scroll the background texture
+        //bgYOffSet -= 1;
 
         if (IsKeyPressed(KEY_ONE))
         {
@@ -67,11 +70,6 @@ void Application::Run()
 
         if (IsKeyPressed(KEY_FOUR))
         {
-            ChangeState(EGameState::HIGHSCORE);
-        }
-
-        if (IsKeyPressed(KEY_FIVE))
-        {
             ChangeState(EGameState::CREDITS);
         }
 
@@ -81,7 +79,7 @@ void Application::Run()
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(LIGHTGRAY);
 
         //draw background Texture
         /*DrawTexturePro(

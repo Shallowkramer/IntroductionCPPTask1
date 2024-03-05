@@ -161,10 +161,6 @@ void PlayState::DrawGameUI()
 	std::string strScore = std::to_string(score);
 	DrawInfoPanel(strScore.c_str());
 
-	
-
-	DrawRectangle(0, GetScreenHeight() - infoHeight +1, GetScreenWidth() * healthPercentage, 20, healthBarColor);
-
 
 
 }
