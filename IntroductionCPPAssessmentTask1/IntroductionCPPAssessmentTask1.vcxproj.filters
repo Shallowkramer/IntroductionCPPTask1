@@ -72,17 +72,17 @@
     <ClCompile Include="Room.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lamp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoxOfDonuts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cat.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameObjects\Items</Filter>
     </ClCompile>
     <ClCompile Include="Dog.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxOfDonuts.cpp">
+      <Filter>Source Files\GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Lamp.cpp">
+      <Filter>Source Files\GameObjects\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,17 +128,17 @@
     <ClInclude Include="Item.h">
       <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
-    <ClInclude Include="lamp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BoxOfDonuts.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
     <ClInclude Include="Cat.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
     <ClInclude Include="Dog.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Lamp.h">
+      <Filter>Header Files\GameObjects\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -137,7 +137,7 @@
     <ClCompile Include="InterfaceGameObject.cpp" />
     <ClCompile Include="InterfaceGameState.cpp" />
     <ClCompile Include="IntroductionCPPAssessmentTask1.cpp" />
-    <ClCompile Include="lamp.cpp" />
+    <ClCompile Include="Lamp.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -156,7 +156,7 @@
     <ClInclude Include="InterfaceGameObject.h" />
     <ClInclude Include="InterfaceGameState.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="lamp.h" />
+    <ClInclude Include="Lamp.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="Player.h" />
