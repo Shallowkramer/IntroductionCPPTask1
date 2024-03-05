@@ -25,6 +25,12 @@
     <Filter Include="Header Files\GameStates">
       <UniqueIdentifier>{3f80600a-4ac1-4661-ad33-ad3548ded491}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameObjects\Items">
+      <UniqueIdentifier>{3e43db48-2d9b-41c2-93d2-a858411592c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Items">
+      <UniqueIdentifier>{c557ce52-4741-4dd4-9e50-e3bc2c53d8e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IntroductionCPPAssessmentTask1.cpp">
@@ -63,6 +69,21 @@
     <ClCompile Include="MenuState.cpp">
       <Filter>Source Files\GameStates</Filter>
     </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lamp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxOfDonuts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h">
@@ -100,6 +121,24 @@
     </ClInclude>
     <ClInclude Include="MenuState.h">
       <Filter>Header Files\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="lamp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxOfDonuts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
